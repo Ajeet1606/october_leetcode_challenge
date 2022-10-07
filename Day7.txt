@@ -1,0 +1,17 @@
+class MyCalendarThree {
+public:
+    map<int, int>map;
+    int mx = 0;
+    int book(int start, int end) {
+        map[start]++;
+        map[end]--;
+
+        int cnt = 0;
+        for(auto [key, value]: map){
+            cnt += value;
+            mx = max(mx, cnt);
+        }
+        return mx;
+    }
+};
+
