@@ -1,0 +1,61 @@
+//Brute Force - O(n^3)
+
+class Solution {
+public:
+    int threeSumClosest(vector<int>& arr, int target) {
+        int ans = arr[0]+arr[1]+arr[2];
+        int n = arr.size();
+        for(int i=0; i<n-2; i++){
+            for(int j=i+1; j<n-1; j++){
+                for(int k=j+1; k<n; k++){
+                    int sum = arr[i]+arr[j]+arr[k];
+                    if(abs(sum - target) < abs(ans - target))
+                        ans = sum;
+                }
+            }
+        }
+        return ans;
+    }
+};
+
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<----------------->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+class Solution {
+public:
+    int threeSumClosest(vector<int>& arr, int target) {
+        int n = arr.size();
+        //consider first 3 elements
+        int ans = arr[0] + arr[1] + arr[2];
+        //sort array
+        sort(arr.begin(), arr.end());
+        //    -        -        - - - - - - - - - - - - - - -     -
+        //    ^        ^                                          ^
+        //  first   second                                       last
+        for(int first = 0; first < n-2; first++){
+            int second = first+1, last = n-1;
+            //finish a round of first pointer
+            while(second < last){
+                //current sum
+                int sum = arr[first] + arr[second] + arr[last];
+                //best match
+                if(sum == target) return sum;
+                //update ans
+                if(abs(sum - target) < abs(ans - target)){
+                    ans = sum;
+                }
+                //reduce current sum
+                if(sum > target){
+                    last--;
+                }
+                //increase current sum
+                if(sum < target){
+                    second++;
+                }
+            }
+        }
+
+        return ans;
+    }
+};
