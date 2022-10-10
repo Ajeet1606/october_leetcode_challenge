@@ -9,17 +9,10 @@ public:
         if(n == 1) return "";
         int l = 0, r = n-1;
         bool done = false;
-        while(l <= r and !done){
-            if(l < r){
-                if(palindrome[l] != 'a'){
-                    palindrome[l] = 'a';
-                    done = true;
-                }
-            }else{
-                if(palindrome[l] != 'a' and palindrome[l-1] != 'a'){
-                    palindrome[l] = 'a';
-                    done = true;
-                }
+        while(l < r and !done){
+            if(palindrome[l] != 'a'){
+                palindrome[l] = 'a';
+                done = true;
             }
             l++;
             r--;
