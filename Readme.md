@@ -4,6 +4,6 @@
 
 
 - Adding problems solution daily
-- In C++ language 
-- Trying to add multiple approaches.
+- In C++, JAVA & Python languages 
+- Will Try to add multiple approaches.
 
